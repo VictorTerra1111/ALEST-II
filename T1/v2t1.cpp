@@ -7,7 +7,6 @@ int main()
 {
     int size;   // size of the array
     int op = 0; // number of operations
-    int enter;
     bool repeating = false; // flag for repetition of a value in the new array comparing to the old
    
     cin >> size;    
