@@ -2,6 +2,8 @@
 
 using namespace std;
 
+/
+
 int main()
 {
     int size;   // size of the array
