@@ -2,7 +2,7 @@
 #include <string>
 #include <vector>
 
-#include "graph.hpp"
+#include "../base_graph/graph.hpp"
 
 #ifndef DIGRAPH_H
 #define DIGRAPH_H

@@ -3,7 +3,7 @@
 #include <set>
 #include <sstream>
 
-#include "Graph.hpp"
+#include "graph.hpp"
 
 
 using namespace std;

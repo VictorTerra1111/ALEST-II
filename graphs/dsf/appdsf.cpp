@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Graph.hpp"
+#include "../base_graph/graph.hpp"
 #include "dsf.hpp"
 
 using namespace std;
@@ -7,7 +7,7 @@ using namespace std;
 
 int main(){
     Graph g("exemplos/tinyG.txt");
-    dsf d(g, "0");
+    DepthFirstSearch d(g, "0");
   
     
     for (auto const &v : g.getVerts()) {
