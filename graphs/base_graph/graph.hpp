@@ -20,11 +20,11 @@ class Graph {
 
         string toDot();
 
-        protected:
+    protected:
         void addToList(string v, string w);
         set<string> vertices;
 
-        private:
+    private:
         map<string, vector<string>> graph;
 };
 
