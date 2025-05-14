@@ -1,34 +1,37 @@
 #include <iostream>
-#include <string>
 #include <vector>
-#include <algorithm>
 #include "dir_graph_c.hpp"
 #include "node_c.hpp"
 
 using namespace std;
 
-dir_graph_c::dir_graph_c(string v)
+template <typename T>
+dir_graph_c<T>::dir_graph_c(T v)
 {
+    tam = 0;
     add_vertice(v);
 }
 
-void dir_graph_c::add_vertice(string value)
+template <typename T>
+void dir_graph_c<T>::add_vertice(T value)
 {
-    node_c * nodo = new node_c(value);
+    node_c<T> *nodo = new node_c<T>(value);
     grafo.push_back(nodo);
     tam++;
 }
 
-void dir_graph_c::add_aresta(string v1, string v2)
+template <typename T>
+void dir_graph_c<T>::add_aresta(T v1, T v2)
 {
-    node_c *nodo1 = encontra_nodo(v1);
-    node_c *nodo2 = encontra_nodo(v2);
+    node_c<T> *nodo1 = encontra_nodo(v1);
+    node_c<T> *nodo2 = encontra_nodo(v2);
 
     if (nodo1 != nullptr && nodo2 != nullptr)
         nodo1->ad_vizinho(nodo2);
 }
 
-node_c *dir_graph_c::encontra_nodo(string v)
+template <typename T>
+node_c<T> *dir_graph_c<T>::encontra_nodo(T v)
 {
     for (int i = 0; i < tam; i++)
     {
@@ -40,17 +43,23 @@ node_c *dir_graph_c::encontra_nodo(string v)
     return nullptr;
 }
 
-vector<node_c *> dir_graph_c::get_vertices()
+template <typename T>
+vector<node_c<T> *> dir_graph_c<T>::get_vertices()
 {
     return grafo;
 }
-vector<node_c *> dir_graph_c::get_vizinhos(string v)
+
+template <typename T>
+vector<node_c<T> *> dir_graph_c<T>::get_vizinhos(T v)
 {
-    node_c *nodo = encontra_nodo(v);
-    return nodo->get_vizinhos();
+    node_c<T> *nodo = encontra_nodo(v);
+    if (nodo != nullptr)
+        return nodo->get_vizinhos();
+    return {};
 }
 
-int dir_graph_c::get_grafo_size()
+template <typename T>
+int dir_graph_c<T>::get_grafo_size()
 {
     return tam;
 }

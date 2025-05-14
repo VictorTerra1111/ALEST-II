@@ -1,25 +1,30 @@
 #include <iostream>
-#include <string>
 #include <vector>
 #include "node_c.hpp"
 
 using namespace std;
 
-node_c::node_c(string valor){
+template <typename T>
+node_c<T>::node_c(T valor){
     this->valor;
 }
 
-void node_c::ad_vizinho(node_c * vizinho){
+template <typename T>
+void node_c<T>::ad_vizinho(node_c<T> * vizinho){
     vizinhos.push_back(vizinho);
 }
 
-string node_c::get_valor(){
+template <typename T>
+T node_c<T>::get_valor(){
     return valor;
 }
 
-bool node_c::get_visitado(){
+template <typename T>
+bool node_c<T>::get_visitado(){
     return visitado;
 }
-vector<node_c*> node_c::get_vizinhos(){
+
+template <typename T>
+vector<node_c<T>*> node_c<T>::get_vizinhos(){
     return vizinhos;
 }

@@ -3,7 +3,8 @@
 
 using namespace std;
 
-void graph_c::add_aresta(string v1, string v2){
+template <typename T>
+void graph_c<T>::add_aresta(T v1, T v2){
     node_c *nodo1 = encontra_nodo(v1);
     node_c *nodo2 = encontra_nodo(v2);
 

@@ -2,21 +2,19 @@
 #define NODE_C_HPP
 
 #include <vector>
-#include <string>
 
-using namespace std;
-
+template <typename T>
 class node_c{
     private:
-        string valor;
-        vector<node_c *> vizinhos;
+        T valor;
+        std::vector<node_c<T> *> vizinhos;
         bool visitado;
     public:
-        node_c(string valor);
-        string get_valor();
+        node_c(T valor);
+        T get_valor();
         bool get_visitado();
-        vector<node_c *> get_vizinhos();
-        void ad_vizinho(node_c * vizinho);
+        std::vector<node_c<T> *> get_vizinhos();
+        void ad_vizinho(node_c<T> * vizinho);
 };
 
 #endif
