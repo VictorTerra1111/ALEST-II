@@ -6,26 +6,24 @@
 #ifndef GRAPH_H
 #define GRAPH_H
 
-using namespace std;
-
 class Graph {
-    public:
-        Graph();
-        Graph(string filename);
+ public:
+  Graph();
+  Graph(std::string filename);
 
-        vector<string> getAdj(string v);
-        set<string> getVerts();
+  std::vector<std::string> getAdj(std::string v);
+  std::set<std::string> getVerts();
 
-        void addEdge(string v, string w);
+  void addEdge(std::string v, std::string w);
 
-        string toDot();
+  std::string toDot();
 
-    protected:
-        void addToList(string v, string w);
-        set<string> vertices;
+ protected:
+  void addToList(std::string v, std::string w);
+  std::set<std::string> vertices;
 
-    private:
-        map<string, vector<string>> graph;
+ private:
+  std::map<std::string, std::vector<std::string>> graph;
 };
 
 #endif
